@@ -26,12 +26,14 @@ describe("Car tests", function () {
 
     it("should set fuel according to driving", function () {
       var initialFuel = car.fuel;
-      var milesDriven = 100;
-
+      var milesDriven = 150;
+      var expectedFuel = initialFuel - (milesDriven/car.fuel_economy);
+      car.drive(milesDriven);
+      expect(car.fuel).to.equal(expectedFuel);
     });
 
     it("should return an error when attempting to drive more than fuel left in car", function () {
-      // test
+      expect(car.drive(3000)).to.equal('Not enough fuel in car!');
     });
 
   });
