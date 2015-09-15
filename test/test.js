@@ -20,11 +20,14 @@ describe("Car tests", function () {
     });
 
     it("should set fuel to max when fill is called without argument", function () {
-      // test
+      car.fill();
+      expect(car.fuel).to.equal(car.max_fuel);
     });
 
     it("should set fuel according to driving", function () {
-      // test
+      var initialFuel = car.fuel;
+      var milesDriven = 100;
+
     });
 
     it("should return an error when attempting to drive more than fuel left in car", function () {
